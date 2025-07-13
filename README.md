@@ -41,32 +41,22 @@ Standard libraries were used for data processing (`pandas`, `numpy`), visualizat
 - Features `V1` to `V28` were already transformed using PCA
 
 ### 4. Handling class imbalance
-
-- Used stratified sampling during train-test split to maintain class distribution
-- Optionally applied under-sampling or over-sampling techniques such as SMOTE
+- Applied over-sampling techniques such as SMOTE
 
 ### 5. Model training
 
 - Trained multiple classifiers including:
-  - Logistic regression
-  - Decision tree
-  - Random forest
+  - Logistic regression with no handle imablanced
+  - Logistic regression with handle imablanced using SMOTE
 - Evaluation focused on:
   - Precision
   - Recall
   - F1-score
-  - ROC-AUC score
 
 ### 6. Model evaluation
 
-- Used confusion matrix and ROC curve for performance analysis
+- Used confusion matrix for performance analysis
 - Emphasized minimizing false negatives and improving recall for the minority class
-
-### 7. Conclusion
-
-- Discussed trade-offs between precision and recall
-- Identified the most suitable model based on evaluation metrics
-- Suggested further work including advanced algorithms and anomaly detection methods
 
 ## evaluation results
 
@@ -80,12 +70,4 @@ Standard libraries were used for data processing (`pandas`, `numpy`), visualizat
 - **Weighted average:** Precision = 0.95, Recall = 0.95, F1-score = 0.95  
 - **Total samples:** 141,627
 
-> Note: Metrics above are illustrative; please refer to the notebook for actual results.
 
-## Environment setup
-
-```bash
-# Recommended: Python version < 3.10
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-pip install -r requirements.txt
